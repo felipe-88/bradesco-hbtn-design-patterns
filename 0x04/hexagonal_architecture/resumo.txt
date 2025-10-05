@@ -1,0 +1,22 @@
+A Arquitetura Hexagonal foi concebida por Alistair Cockburn em 2005 com o objetivo de isolar a lógica de negócio do núcleo da aplicação de suas tecnologias externas. A principal característica é a separação entre a parte interna da aplicação (o domínio de negócio) e a parte externa (interfaces, bancos de dados, APIs, etc.), de modo que o núcleo da aplicação não dependa de nenhuma ferramenta ou tecnologia específica. A analogia do hexágono simboliza que a aplicação pode ser acessada por diferentes "lados" (ou portas), cada um com seu respectivo "adaptador" para traduzir a comunicação com o mundo exterior.
+
+Essa arquitetura oferece diversas vantagens que promovem a saúde e longevidade do sistema. Seus principais benefícios:
+Desacoplamento: A separação de responsabilidades garante que o núcleo de negócio seja independente de tecnologias externas, como bancos de dados, interfaces de usuário ou frameworks.
+Testabilidade: O isolamento do núcleo da aplicação facilita a escrita de testes unitários e de integração, uma vez que as dependências externas podem ser facilmente simuladas ou substituídas.
+Flexibilidade: Permite a troca de tecnologias externas (por exemplo, migrar um banco de dados) com impacto mínimo no domínio.
+Manutenibilidade: código mais fácil de manter, pois as regras de negócio estão concentradas e não se misturam com a infraestrutura.
+Escalabilidade: A modularidade ajuda a escalar diferentes partes do sistema de forma independente.
+
+Arquitetura Hexagonal vs. Clean Architecture
+Embora compartilhem objetivos semelhantes de desacoplamento e isolamento do domínio, a principal diferença está na granularidade e nas camadas.
+Arquitetura Hexagonal: Foca na distinção entre o "interior" e o "exterior" por meio de portas e adaptadores, sem necessariamente impor um número fixo de camadas.
+Clean Architecture: É mais abrangente, proposta por Robert C. Martin, que incorpora a ideia hexagonal em um modelo de camadas mais rígido e circular. O núcleo é totalmente independente das camadas externas e a inversão de dependência garante que as camadas internas não dependam das externas. A Clean Architecture pode ser vista como uma evolução ou uma implementação mais detalhada dos princípios da Arquitetura Hexagonal.
+
+Embora a Arquitetura Hexagonal seja uma abordagem poderosa, ela não é ideal para todo e qualquer projeto. Sua complexidade pode ser excessiva para aplicações simples, como pequenos CRUDs onde uma arquitetura MVC pode ser suficiente. Entretanto, para sistemas complexos e de longa vida útil, ela se mostra benéfica.
+
+Antes de adotar a Arquitetura Hexagonal, é crucial considerar alguns fatores:
+Complexidade do domínio: A arquitetura é mais adequada para sistemas com lógica de negócio complexa, onde o isolamento do domínio é essencial.
+Curva de aprendizado: A equipe de desenvolvimento precisa estar familiarizada com seus conceitos.
+Custo-benefício: Em projetos menores, o tempo gasto com a estruturação da arquitetura pode não compensar os benefícios a curto prazo.
+Necessidades de teste: A alta testabilidade é um dos principais atrativos; se a automação de testes for uma prioridade, essa arquitetura é uma ótima opção.
+Longevidade do projeto: Para sistemas que precisarão evoluir e se adaptar a novas tecnologias ao longo do tempo, a flexibilidade é uma grande vantagem.
